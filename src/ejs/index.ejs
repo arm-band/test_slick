@@ -1,0 +1,141 @@
+<%- include('partial/_head') %>
+<body>
+<%- include('partial/_header') %>
+<main class="l-main">
+    <section class="container py-5">
+        <h1><i class="fas fa-fw fa-long-arrow-alt-up mr-2" aria-hidden="true"></i><%= parameters.title %></h1>
+        <p><%= parameters.description %></p>
+    </section>
+    <section class="container pb-5">
+        <h2>Slick 1</h2>
+        <p>Slick で <code>lazyLoad</code> を有効にする。</p>
+        <div class="d-flex justify-content-center align-items-center">
+            <ul class="c-slick" id="lazyLoad">
+                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 1-1"></li>
+                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 1-2"></li>
+                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 1-3"></li>
+                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 1-4"></li>
+            </ul>
+        </div>
+        <p id="lazyLoadLog">Now Loading...</p>
+    </section>
+    <section class="container pb-5">
+        <h2>Slick 2</h2>
+        <p>モーダル等の <code>display: none;</code> がかかっている要素を親とする Slick で位置の再計算をして表示させる</p>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <a href="#" id="nonSetPotionModalButton" class="btn c-buttonMain" data-toggle="modal" data-target="#nonSetPotionModal"><i class="fas fa-fw fa-clone mr-2" aria-hidden="true"></i>モーダルを開く (<code>setPotion</code> 指定なし)</a>
+            </div>
+            <div class="col-12 col-md-6">
+                <a href="#" id="setPotionModalButton" class="btn c-buttonMain" data-toggle="modal" data-target="#setPotionModal"><i class="fas fa-fw fa-clone mr-2" aria-hidden="true"></i>モーダルを開く (<code>setPotion</code> 指定あり)</a>
+                <p>※2回目以降 <code>Uncaught TypeError: Cannot read property 'add' of null</code> エラーが発生する</p>
+            </div>
+        </div>
+        <div class="modal fade" id="nonSetPotionModal" tabindex="-1" aria-labelledby="nonSetPotionModalLabel">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="nonSetPotionModalLabel">Slick を埋め込んだモーダル (nonSetPotion)</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+                            <i class="fas fa-fw fa-times" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <ul class="c-slick" id="nonSetPotion">
+                                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 2-1-1"></li>
+                                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 2-1-2"></li>
+                                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 2-1-3"></li>
+                                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 2-1-4"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="setPotionModal" tabindex="-1" aria-labelledby="setPotionModalLabel">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="setPotionModalLabel">Slick を埋め込んだモーダル (setPotion)</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+                            <i class="fas fa-fw fa-times" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <ul class="c-slick" id="setPotion">
+                                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 2-2-1"></li>
+                                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 2-2-2"></li>
+                                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 2-2-3"></li>
+                                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 2-2-4"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container pb-5">
+        <h2>Slick 3</h2>
+        <p>モーダルのために「ボタンをクリックしたら slick 実行」 とすると、2回目以降に Slick のバインドで <code>Uncaught TypeError: Cannot read property 'add' of null</code> エラーが発生するので、 <code>.not('.slick-initialized')</code> で抑制する</p>
+        <a href="#" id="unInitializedModalButton" class="btn c-buttonMain" data-toggle="modal" data-target="#unInitializedModal"><i class="fas fa-fw fa-clone mr-2" aria-hidden="true"></i>モーダルを開く (<code>.not('.slick-initialized')</code> 指定あり)</a>
+        <p>※2回目以降 Slick 実行対象が <code>undefined</code> になる</p>
+        <p>※ Slick アニメーション開始前にモーダルを閉じると次回以降表示が正常に行われない</p>
+        </div>
+        <div class="modal fade" id="unInitializedModal" tabindex="-1" aria-labelledby="unInitializedModalLabel">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="unInitializedModalLabel">Slick を埋め込んだモーダル (unInitialized)</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+                            <i class="fas fa-fw fa-times" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <ul class="c-slick" id="unInitialized">
+                                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 2-1-1"></li>
+                                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 2-1-2"></li>
+                                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 2-1-3"></li>
+                                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 2-1-4"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container pb-5">
+        <h2>Slick 4</h2>
+        <p>2回目以降 Slick 実行対象が <code>undefined</code> になるのが釈然としないので <code>unslick</code> する</p>
+            <a href="#" id="unSlickModalButton" class="btn c-buttonMain" data-toggle="modal" data-target="#unSlickModal"><i class="fas fa-fw fa-clone mr-2" aria-hidden="true"></i>モーダルを開く</a>
+        </div>
+        <div class="modal fade" id="unSlickModal" tabindex="-1" aria-labelledby="unSlickModalLabel">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="unSlickModalLabel">Slick を埋め込んだモーダル (unSlick)</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+                            <i class="fas fa-fw fa-times" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <ul class="c-slick" id="unSlick">
+                                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 2-1-1"></li>
+                                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 2-1-2"></li>
+                                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 2-1-3"></li>
+                                <li><img data-lazy="http://placehold.jp/667x375.jpg" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" alt="Slick 2-1-4"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<%- include('partial/_footer') %>
+<%- include('partial/_js_loader') %>
+</body>
+</html>

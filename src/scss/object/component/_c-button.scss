@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+@use "../../foundation" as f;
+@use "sass:color";
+
+.c-button {
+    &Main {
+        &,
+        &:link,
+        &:visited,
+        &:hover,
+        &:active,
+        &:focus {
+            color: f.$bg-color;
+        }
+        &,
+        &:link {
+            background-color: f.$main-color;
+        }
+        &:visited {
+            background-color: color.adjust(f.$main-color, $lightness: -8%);
+        }
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: color.adjust(f.$main-color, $lightness: 8%);
+        }
+    }
+}

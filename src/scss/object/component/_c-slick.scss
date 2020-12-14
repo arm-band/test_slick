@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+@use "../../foundation" as f;
+
+//slick
+.c-slick {
+    padding-inline-start: 0px;
+    overflow: hidden;
+    position: relative;
+    max: {
+        width: 667px;
+        height: 375px;
+    }
+
+    li {
+        img {
+            width: 100%;
+        }
+    }
+    .slide_arrow {
+        position: absolute;
+        top: 50%;
+        z-index: 2;
+        @include f.t();
+        .fa-fw {
+            color: f.$main-color;
+            cursor: pointer;
+        }
+        &Left {
+            left: -100%;
+        }
+        &Right {
+            right: -100%;
+        }
+    }
+    &.arrowShow {
+        .slide_arrow {
+            &Left {
+                left: 0;
+            }
+            &Right {
+                right: 0;
+            }
+        }
+    }
+}
